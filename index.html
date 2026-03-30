@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kore Agentic Chat</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #container-id {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container-id"></div>
+
+<script>
+    function initializeChat(userEmail) {
+        const chatConfig = {
+            apiKey: 'eyJhcGlLZXkiOiJhdi02NWUzNjRlZi0yZjdjLTQ5ZDctOGIzZC0yOGVjNzE3YWMzODciLCJlbnYiOiJkcmFmdCIsImFwcElkIjoiYWEtMDlmY2QwOGItN2YyMy00ZjYyLTlmZGItYzg4MGViNDkyZTI0IiwiYWNjb3VudElkIjoiNjU4NTg2MWYzNzNhMTRlYTY3Y2NkNTZlIiwiYXBwdklkIjoiYXYtNjVlMzY0ZWYtMmY3Yy00OWQ3LThiM2QtMjhlYzcxN2FjMzg3IiwiZW52SWQiOiJkcmFmdCJ9',
+            containerId: 'container-id',
+            baseUrl: 'https://agent-platform.kore.ai',
+            userIdentity: {
+                email: userEmail
+            }
+        };
+
+        KoreAgenticChatSDK.initialize(chatConfig);
+    }
+
+    // Static email (for testing)
+    const userEmail = "nagabhadrm@pronix.com";
+    initializeChat(userEmail);
+
+</script>
+
+</body>
+</html>
