@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,15 +20,17 @@
 
 <div id="container-id"></div>
 
-<script src='https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js"></script>
+
 <script>
-	 // Initialize chat configuration
-	 const chatConfig = {
-	 apiKey:'eyJhcGlLZXkiOiJhdi02NWUzNjRlZi0yZjdjLTQ5ZDctOGIzZC0yOGVjNzE3YWMzODciLCJlbnYiOiJkcmFmdCIsImFwcElkIjoiYWEtMDlmY2QwOGItN2YyMy00ZjYyLTlmZGItYzg4MGViNDkyZTI0IiwiYWNjb3VudElkIjoiNjU4NTg2MWYzNzNhMTRlYTY3Y2NkNTZlIiwiYXBwdklkIjoiYXYtNjVlMzY0ZWYtMmY3Yy00OWQ3LThiM2QtMjhlYzcxN2FjMzg3IiwiZW52SWQiOiJkcmFmdCJ9',
-	 containerId:'container-id', // Provide a container id under which the chat widget will be rendered
-	 baseUrl:'https://agent-platform.kore.ai'
-	 }
-	 // Initialize the chat SDK with configuration
+const chatConfig = {
+    botId: "aa-09fcd08b-7f23-4f62-9fdb-c880eb492e24",
+    clientId: "av-65e364ef-2f7c-49d7-8b3d-28ec717ac387",
+    env: "draft",
+    containerId: "container-id",
+    baseUrl: "https://agent-platform.kore.ai"
+};
+
 KoreAgenticChatSDK.initialize(chatConfig);
 </script>
 
