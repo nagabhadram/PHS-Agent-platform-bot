@@ -1,35 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kore Agentic Chat</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primary Arms Search Assistant</title>
 
-        #container-id {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .header {
+      background: #1f2937;
+      color: white;
+      padding: 16px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #chat-container {
+      width: 100%;
+      height: calc(100vh - 70px);
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="container-id"></div>
+  <div class="header">
+    PHS
+  </div>
 
-<script src='https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js'></script>
-<script>
-	 // Initialize chat configuration
-	 const chatConfig = {
-	 apiKey:'eyJhcGlLZXkiOiJhdi02NWUzNjRlZi0yZjdjLTQ5ZDctOGIzZC0yOGVjNzE3YWMzODciLCJlbnYiOiJkcmFmdCIsImFwcElkIjoiYWEtMDlmY2QwOGItN2YyMy00ZjYyLTlmZGItYzg4MGViNDkyZTI0IiwiYWNjb3VudElkIjoiNjU4NTg2MWYzNzNhMTRlYTY3Y2NkNTZlIiwiYXBwdklkIjoiYXYtNjVlMzY0ZWYtMmY3Yy00OWQ3LThiM2QtMjhlYzcxN2FjMzg3IiwiZW52SWQiOiJkcmFmdCJ9',
-	 containerId:'container-id', // Provide a container id under which the chat widget will be rendered
-	 baseUrl:'https://agent-platform.kore.ai'
-	 }
-	 // Initialize the chat SDK with configuration
-KoreAgenticChatSDK.initialize(chatConfig);
-</script>
+  <!-- Chat Container -->
+  <div id="chat-container"></div>
+
+  <!-- Kore.ai Widget Loader -->
+  <script
+    src="https://widget.kore.ai/v1/loader.js"
+    data-app-id="aa-09fcd08b-7f23-4f62-9fdb-c880eb492e24"
+    data-container="chat-container">
+  </script>
+
+  <script>
+    window.onload = function () {
+
+      KoreWidget.init({
+        appId: "aa-09fcd08b-7f23-4f62-9fdb-c880eb492e24",
+
+        containerId: "chat-container",
+
+        theme: "light",
+
+        position: "bottom-right",
+
+        greeting: "Hi! How can I help you today?",
+
+        environment: "draft"
+      });
+
+    };
+  </script>
+
 </body>
 </html>
