@@ -27,21 +27,10 @@
       text-align:center;
     }
 
-    .content h1{
-      color:#111827;
-    }
-
-    .content p{
-      color:#555;
-      font-size:18px;
-    }
-
     #chat-container{
-      position:fixed;
-      bottom:20px;
-      right:20px;
       width:400px;
       height:700px;
+      margin:30px auto;
       background:white;
       border-radius:16px;
       overflow:hidden;
@@ -52,9 +41,8 @@
 
       #chat-container{
         width:100%;
-        height:100%;
-        right:0;
-        bottom:0;
+        height:100vh;
+        margin:0;
         border-radius:0;
       }
 
@@ -71,20 +59,13 @@
 
   <div class="content">
     <h1>Welcome</h1>
-
-    <p>
-      Ask questions and get instant AI-powered support.
-    </p>
+    <p>Ask questions and get instant AI-powered support.</p>
   </div>
 
   <div id="chat-container"></div>
 
-  <script
-    src="https://widget.kore.ai/v1/loader.js"
-    data-app-id="aa-eef97655-7509-4d62-9a32-c70da75adc6d"
-    data-api-key="kg-eb85bc05-a6be-4f55-8ca1-23d7f22f7fd7.e9d435e4-6f93-4e12-8111-fc887d7a48b1"
-    data-container="chat-container">
-  </script>
+  <!-- Kore.ai Widget Script -->
+  <script src="https://widget.kore.ai/v1/loader.js"></script>
 
   <script>
 
@@ -94,19 +75,25 @@
 
         KoreWidget.init({
 
-          appId:"aa-eef97655-7509-4d62-9a32-c70da75adc6d",
+          appId: "aa-eef97655-7509-4d62-9a32-c70da75adc6d",
 
-          containerId:"chat-container",
+          apiKey: "kg-eb85bc05-a6be-4f55-8ca1-23d7f22f7fd7.e9d435e4-6f93-4e12-8111-fc887d7a48b1",
 
-          theme:"light",
+          containerId: "chat-container",
 
-          position:"bottom-right",
+          theme: "light",
 
-          greeting:"Hello! How can I help you today?",
+          botName: "Blackboard AI Support Assistant",
 
-          botName:"Blackboard AI Support Assistant"
+          greeting: "Hello! How can I help you today?",
+
+          position: "bottom-right"
 
         });
+
+      } else {
+
+        console.error("KoreWidget failed to load");
 
       }
 
