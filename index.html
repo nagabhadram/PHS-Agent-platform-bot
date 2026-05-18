@@ -64,42 +64,12 @@
 
   <div id="chat-container"></div>
 
-  <!-- Agentic Chat SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js"></script>
 
-  <script>
-
-    window.onload = async function () {
-
-      try {
-
-        console.log("Initializing Agentic Chat SDK");
-
-        const chat = new KoreAgenticChatSDK.ChatWidget({
-
-          appId: "aa-eef97655-7509-4d62-9a32-c70da75adc6d",
-
-          apiKey: "kg-eb85bc05-a6be-4f55-8ca1-23d7f22f7fd7.e9d435e4-6f93-4e12-8111-fc887d7a48b1",
-
-          container: "#chat-container",
-
-          theme: "light"
-
-        });
-
-        await chat.render();
-
-        console.log("Bot Loaded Successfully");
-
-      } catch(error) {
-
-        console.error("SDK Initialization Error:", error);
-
-      }
-
-    };
-
-  </script>
+<div id="chat-container"></div>
+<script src="https://widget.kore.ai/v1/loader.js"
+        data-app-id="your-app-id"
+        data-container="chat-container">
+</script>
 
 </body>
 </html>
