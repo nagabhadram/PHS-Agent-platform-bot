@@ -64,36 +64,36 @@
 
   <div id="chat-container"></div>
 
-  <!-- Kore.ai Widget Script -->
+  <!-- Agentic Chat SDK -->
   <script src="https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js"></script>
 
   <script>
 
-    window.onload = function () {
+    window.onload = async function () {
 
-      if(window.KoreWidget){
+      try {
 
-        KoreWidget.init({
+        console.log("Initializing Agentic Chat SDK");
+
+        const chat = new KoreAgenticChatSDK.ChatWidget({
 
           appId: "aa-eef97655-7509-4d62-9a32-c70da75adc6d",
 
           apiKey: "kg-eb85bc05-a6be-4f55-8ca1-23d7f22f7fd7.e9d435e4-6f93-4e12-8111-fc887d7a48b1",
 
-          containerId: "chat-container",
+          container: "#chat-container",
 
-          theme: "light",
-
-          botName: "Blackboard AI Support Assistant",
-
-          greeting: "Hello! How can I help you today?",
-
-          position: "bottom-right"
+          theme: "light"
 
         });
 
-      } else {
+        await chat.render();
 
-        console.error("KoreWidget failed to load");
+        console.log("Bot Loaded Successfully");
+
+      } catch(error) {
+
+        console.error("SDK Initialization Error:", error);
 
       }
 
