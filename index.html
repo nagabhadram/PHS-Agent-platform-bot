@@ -2,79 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Primary Arms Search Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blackboard AI Support Assistant</title>
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f5f5f5;
     }
 
-    .header {
-      background: #1f2937;
-      color: white;
-      padding: 16px;
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
+    .header{
+      background:#111827;
+      color:white;
+      padding:20px;
+      text-align:center;
+      font-size:24px;
+      font-weight:bold;
     }
 
-    #chat-container {
-      width: 100%;
-      height: calc(100vh - 70px);
+    .content{
+      padding:40px;
+      text-align:center;
     }
+
+    .content h1{
+      color:#111827;
+    }
+
+    .content p{
+      color:#555;
+      font-size:18px;
+    }
+
+    #chat-container{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:400px;
+      height:700px;
+      background:white;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    @media(max-width:768px){
+
+      #chat-container{
+        width:100%;
+        height:100%;
+        right:0;
+        bottom:0;
+        border-radius:0;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
   <div class="header">
-    PHS
+    Blackboard AI Support Assistant
   </div>
 
-  <!-- Chat Container -->
+  <div class="content">
+    <h1>Welcome</h1>
+
+    <p>
+      Ask questions and get instant AI-powered support.
+    </p>
+  </div>
+
   <div id="chat-container"></div>
 
-  <!-- Kore.ai Widget Loader -->
   <script
     src="https://widget.kore.ai/v1/loader.js"
-    data-app-id="aa-09fcd08b-7f23-4f62-9fdb-c880eb492e24"
+    data-app-id="aa-eef97655-7509-4d62-9a32-c70da75adc6d"
+    data-api-key="kg-eb85bc05-a6be-4f55-8ca1-23d7f22f7fd7.e9d435e4-6f93-4e12-8111-fc887d7a48b1"
     data-container="chat-container">
   </script>
 
   <script>
+
     window.onload = function () {
 
-      KoreWidget.init({
-        appId: "aa-09fcd08b-7f23-4f62-9fdb-c880eb492e24",
+      if(window.KoreWidget){
 
-        containerId: "chat-container",
+        KoreWidget.init({
 
-        theme: "light",
+          appId:"aa-eef97655-7509-4d62-9a32-c70da75adc6d",
 
-        position: "bottom-right",
+          containerId:"chat-container",
 
-        greeting: "Hi! How can I help you today?",
+          theme:"light",
 
-        environment: "draft"
-      });
+          position:"bottom-right",
+
+          greeting:"Hello! How can I help you today?",
+
+          botName:"Blackboard AI Support Assistant"
+
+        });
+
+      }
 
     };
+
   </script>
-  <script src='https://cdn.jsdelivr.net/npm/kore-agentic-chat-sdk@latest/dist/umd/kore-agentic-chat-sdk.js'></script>
-<script>
-	 // Initialize chat configuration
-	 const chatConfig = {
-	 apiKey:'eyJhcGlLZXkiOiJhdi1jZjVhMzA1Zi05NTMwLTRkZTQtODI5MC02NzJkOTNlY2EyYzIiLCJlbnYiOiJkcmFmdCIsImFwcElkIjoiYWEtN2I0OTY3OWQtZDAzMi00Nzg1LWJlNTQtYjZkNzAyNWI0M2ExIiwiYWNjb3VudElkIjoiNjU4NTg2MWYzNzNhMTRlYTY3Y2NkNTZlIiwiYXBwdklkIjoiYXYtY2Y1YTMwNWYtOTUzMC00ZGU0LTgyOTAtNjcyZDkzZWNhMmMyIiwiZW52SWQiOiJkcmFmdCJ9',
-	 containerId:'chat-container', // Provide a container id under which the chat widget will be rendered
-	 baseUrl:'https://agent-platform.kore.ai'
-	 }
-	 // Initialize the chat SDK with configuration
-KoreAgenticChatSDK.initialize(chatConfig);
-</script>
 
 </body>
 </html>
